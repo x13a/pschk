@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CodeSign",
+        "repositoryURL": "https://github.com/x13a/codesign-swift",
+        "state": {
+          "branch": null,
+          "revision": "c582d44fc48fc88ea5ab866971403663f9389244",
+          "version": "0.1.0"
+        }
+      },
+      {
+        "package": "Proc",
+        "repositoryURL": "https://github.com/x13a/libproc-swift",
+        "state": {
+          "branch": null,
+          "revision": "a65692edfe370d1d8feff32e736cfd364c4c7333",
+          "version": "0.1.6"
+        }
+      },
+      {
+        "package": "swift-argument-parser",
+        "repositoryURL": "https://github.com/apple/swift-argument-parser",
+        "state": {
+          "branch": null,
+          "revision": "e1465042f195f374b94f915ba8ca49de24300a0d",
+          "version": "1.0.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
