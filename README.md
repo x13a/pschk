@@ -6,7 +6,7 @@ Find suspicious processes.
 
 ```sh
 $ make
-$ make install
+$ sudo make install
 ```
 or
 ```sh
@@ -22,4 +22,19 @@ USAGE: pschk [--version]
 OPTIONS:
   --version               Print version and exit
   -h, --help              Show help information.
+```
+
+## Example
+
+```sh
+~
+❯ pschk
+[74437] /Applications/Firefox.app/Contents/MacOS/firefox
+[57292] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
+[78984] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
+[74552] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
+[74449] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
+[74448] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
+[63463] /Applications/Fork.app/Contents/MacOS/Fork
+...
 ```

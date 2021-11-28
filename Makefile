@@ -2,9 +2,9 @@ NAME        := pschk
 
 prefix      ?= /usr/local
 exec_prefix ?= $(prefix)
-bindir      ?= $(exec_prefix)/bin
+sbindir     ?= $(exec_prefix)/sbin
 
-bindestdir  := $(DESTDIR)$(bindir)
+sbindestdir := $(DESTDIR)$(sbindir)
 targetdir   := ./.build
 
 all: build
@@ -13,13 +13,13 @@ build:
 	swift build --configuration release
 
 installdirs:
-	install -d $(bindestdir)/
+	install -d $(sbindestdir)/
 
 install: installdirs
-	install $(targetdir)/release/$(NAME) $(bindestdir)/
+	install $(targetdir)/release/$(NAME) $(sbindestdir)/
 
 uninstall:
-	rm -f $(bindestdir)/$(NAME)
+	rm -f $(sbindestdir)/$(NAME)
 
 test:
 	swift test
