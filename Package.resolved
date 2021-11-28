@@ -27,6 +27,15 @@
           "revision": "e1465042f195f374b94f915ba8ca49de24300a0d",
           "version": "1.0.2"
         }
+      },
+      {
+        "package": "SysCall",
+        "repositoryURL": "https://github.com/x13a/syscall-swift",
+        "state": {
+          "branch": null,
+          "revision": "595fb1e127a60191835907a3ade0966044803c76",
+          "version": "0.1.2"
+        }
       }
     ]
   },

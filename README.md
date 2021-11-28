@@ -1,6 +1,6 @@
 # pschk
 
-Find suspicious processes.
+Check for suspicious processes on macOS.
 
 ## Installation
 
@@ -30,11 +30,11 @@ OPTIONS:
 ~
 ❯ pschk
 [74437] /Applications/Firefox.app/Contents/MacOS/firefox
-[57292] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
-[78984] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
-[74552] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
-[74449] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
-[74448] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
-[63463] /Applications/Fork.app/Contents/MacOS/Fork
+  [78984] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
+  [74448] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
+  [74552] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
+  [74449] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
+  [87122] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
+[74015] /Applications/Fork.app/Contents/MacOS/Fork
 ...
 ```
