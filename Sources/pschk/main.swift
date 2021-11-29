@@ -6,7 +6,7 @@ import Proc
 import ProcUtils
 import SysCall
 
-let Version = "0.1.2"
+let Version = "0.1.3"
 let pathEq: [String] = [
     "/bin/bash",
     "/bin/csh",
@@ -41,6 +41,7 @@ class Node {
     let path: String?
     var args: [String]? = nil
     var msg: String? = nil
+    var isRoot: Bool = false
     var children: [Node]
     
     init(pid: pid_t, ppid: pid_t?, path: String?) {
@@ -60,7 +61,7 @@ class Node {
     func printTree(_ indent: Int = 0) {
         let space = String(repeating: " ", count: indent)
         let pid = String(self.pid).padding(toLength: 5, withPad: " ", startingAt: 0)
-        var msg = self.msg ?? self.path ?? ""
+        var msg = self.msg ?? self.path ?? "nil"
         if let args = self.args {
             msg += " " + args.joined(separator: " ")
         }
@@ -84,15 +85,16 @@ func check() throws {
             ppid: try? ProcUtils.ppid(pid).get(),
             path: try? Proc.pidPath(pid).get()
         )
+        nodes[pid] = node
         guard let code = try? CodeSign.createCode(with: pid).get() else {
-            node.msg = "ERR: create code failed"
-            nodes[pid] = node
+            node.msg = "ERR: create code failed (\(node.path ?? "nil"))"
+            node.isRoot = true
             continue
         }
         if case .failure(_) = CodeSign
             .checkValidity(for: code, requirement: requirement) {
             
-            nodes[pid] = node
+            node.isRoot = true
             continue
         }
         guard let path = node.path else { continue }
@@ -100,20 +102,20 @@ func check() throws {
             pathPrefix.contains(where: { path.hasPrefix($0) }) {
             
             node.args = (try? SysCall.args(pid).get())?.args
-            nodes[pid] = node
+            node.isRoot = true
         }
     }
     var tree = [Node]()
     for node in nodes.values {
-        guard let ppid = node.ppid else {
-            tree.append(node)
-            continue
+        if let ppid = node.ppid {
+            if let parent = nodes[ppid] {
+                parent.children.append(node)
+                continue
+            }
         }
-        guard let parent = nodes[ppid] else {
+        if node.isRoot {
             tree.append(node)
-            continue
         }
-        parent.children.append(node)
     }
     tree.sort(by: { $0.path ?? "" < $1.path ?? "" })
     for node in tree {
