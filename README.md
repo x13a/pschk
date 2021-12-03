@@ -2,6 +2,10 @@
 
 Check for suspicious processes on macOS.
 
+This app will show you all running processes that are not signed by Apple.
+Plus it will show Apple signed running processes like shells, script languages 
+and so on that can be used for malicious activity.
+
 ## Installation
 
 ```sh
