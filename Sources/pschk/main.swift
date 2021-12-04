@@ -6,7 +6,7 @@ import Proc
 import ProcUtils
 import SysCall
 
-let Version = "0.1.3"
+let Version = "0.1.4"
 let pathEq: [String] = [
     "/bin/bash",
     "/bin/csh",
@@ -43,6 +43,7 @@ class Node {
     var msg: String? = nil
     var isRoot: Bool = false
     var children: [Node]
+    weak var parent: Node? = nil
     
     init(pid: pid_t, ppid: pid_t?, path: String?) {
         self.pid = pid
@@ -105,18 +106,22 @@ func check() throws {
             node.isRoot = true
         }
     }
-    var tree = [Node]()
     for node in nodes.values {
-        if let ppid = node.ppid {
-            if let parent = nodes[ppid] {
-                parent.children.append(node)
-                continue
-            }
-        }
-        if node.isRoot {
-            tree.append(node)
-        }
+        guard let ppid = node.ppid else { continue }
+        guard let parent = nodes[ppid] else { continue }
+        node.parent = parent
+        parent.children.append(node)
     }
+    var roots = [pid_t: Node]()
+    for node in nodes.values {
+        guard node.isRoot else { continue }
+        var root = node
+        while root.parent != nil {
+            root = root.parent!
+        }
+        roots[root.pid] = root
+    }
+    var tree = [Node](roots.values)
     tree.sort(by: { $0.path ?? "" < $1.path ?? "" })
     for node in tree {
         node.sort()
