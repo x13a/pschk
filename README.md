@@ -32,7 +32,7 @@ OPTIONS:
 
 ```sh
 ~
-❯ pschk
+❯ [sudo] pschk
 [74437] /Applications/Firefox.app/Contents/MacOS/firefox
   [78984] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
   [74448] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
