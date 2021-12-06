@@ -6,7 +6,7 @@ import Proc
 import ProcUtils
 import SysCall
 
-let Version = "0.1.4"
+let Version = "0.1.5"
 let pathEq: [String] = [
     "/bin/bash",
     "/bin/csh",
@@ -23,7 +23,11 @@ let pathEq: [String] = [
     "/usr/bin/jshell",
     "/usr/bin/swift",
     
+    "/usr/bin/awk",
     "/usr/bin/nc",
+    "/usr/bin/open",
+    "/usr/bin/openssl",
+    "/usr/bin/sudo",
 ]
 let pathPrefix: [String] = [
     "/usr/bin/perl",
@@ -33,6 +37,8 @@ let pathPrefix: [String] = [
     
     "/usr/bin/tclsh",
     "/usr/bin/wish",
+
+    "/System/Library/CoreServices/ScriptMonitor",
 ]
 
 class Node {
