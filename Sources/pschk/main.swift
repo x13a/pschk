@@ -6,7 +6,7 @@ import Proc
 import ProcUtils
 import SysCall
 
-let Version = "0.1.5"
+let Version = "0.1.6"
 let pathEq: [String] = [
     "/bin/bash",
     "/bin/csh",
@@ -24,9 +24,11 @@ let pathEq: [String] = [
     "/usr/bin/swift",
     
     "/usr/bin/awk",
+    "/usr/bin/env",
     "/usr/bin/nc",
     "/usr/bin/open",
     "/usr/bin/openssl",
+    "/usr/bin/su",
     "/usr/bin/sudo",
 ]
 let pathPrefix: [String] = [
