@@ -1,16 +1,16 @@
 # pschk
 
-Check for suspicious processes on macOS.
+Check for suspicious processes on macOS
 
-This app will show you all running processes that are not signed by Apple.
-Plus it will show Apple signed running processes like shells, script languages 
-and so on that can be used for malicious activity.
+The app shows all running processes that are not signed by Apple as a tree.
+Plus it shows Apple signed running processes like shells, script languages 
+and so on that may be used for malicious activity.
 
 ## Installation
 
 ```sh
 $ make
-$ sudo make install
+$ [sudo] make install
 ```
 or
 ```sh
@@ -21,10 +21,13 @@ $ brew install x13a/tap/pschk
 ## Usage
 
 ```text
-USAGE: pschk [--version]
+USAGE: pschk [--version] [--args] [--env] [-a]
 
 OPTIONS:
   --version               Print version and exit
+  --args                  Show arguments for all
+  --env                   Show environment vars
+  -a                      Show all processes, ignore default filter
   -h, --help              Show help information.
 ```
 
@@ -33,13 +36,13 @@ OPTIONS:
 ```sh
 ~
 ❯ [sudo] pschk
-[74437] /Applications/Firefox.app/Contents/MacOS/firefox
-  [78984] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
-  [74448] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
-  [74552] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
-  [74449] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
-  [87122] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
-[74015] /Applications/Fork.app/Contents/MacOS/Fork
+[74437] [user] /Applications/Firefox.app/Contents/MacOS/firefox
+  [78984] [user] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
+  [74448] [user] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
+  [74552] [user] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
+  [74449] [user] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
+  [87122] [user] /Applications/Firefox.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container
+[74015] [user] /Applications/Fork.app/Contents/MacOS/Fork
 ...
 ```
 
