@@ -6,7 +6,7 @@ import CodeSign
 import Proc
 import SysCall
 
-let Version = "0.2.0"
+let Version = "0.2.1"
 let pathEq: [String] = [
     "/bin/bash",
     "/bin/csh",
@@ -204,6 +204,7 @@ func check(_ opts: Opts) throws {
         var root = node
         while let parent = root.parent {
             root = parent
+            root.isShowCommand = true
         }
         roots[root.pid] = root
     }
