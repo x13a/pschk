@@ -1,43 +1,42 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "CodeSign",
-        "repositoryURL": "https://github.com/x13a/codesign-swift",
-        "state": {
-          "branch": null,
-          "revision": "c582d44fc48fc88ea5ab866971403663f9389244",
-          "version": "0.1.0"
-        }
-      },
-      {
-        "package": "Proc",
-        "repositoryURL": "https://github.com/x13a/libproc-swift",
-        "state": {
-          "branch": null,
-          "revision": "a65692edfe370d1d8feff32e736cfd364c4c7333",
-          "version": "0.1.6"
-        }
-      },
-      {
-        "package": "swift-argument-parser",
-        "repositoryURL": "https://github.com/apple/swift-argument-parser",
-        "state": {
-          "branch": null,
-          "revision": "e1465042f195f374b94f915ba8ca49de24300a0d",
-          "version": "1.0.2"
-        }
-      },
-      {
-        "package": "SysCall",
-        "repositoryURL": "https://github.com/x13a/syscall-swift",
-        "state": {
-          "branch": null,
-          "revision": "595fb1e127a60191835907a3ade0966044803c76",
-          "version": "0.1.2"
-        }
+  "originHash" : "5dc6b6dfedc28db3f42ce04ca0db48674ebcac62f6fd4f6c7bf03c1d8956da18",
+  "pins" : [
+    {
+      "identity" : "codesign-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/x13a/codesign-swift",
+      "state" : {
+        "revision" : "8991e827565af293ea745af617bd0a16a9bfad77",
+        "version" : "0.2.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "libproc-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/x13a/libproc-swift",
+      "state" : {
+        "revision" : "a65692edfe370d1d8feff32e736cfd364c4c7333",
+        "version" : "0.1.6"
+      }
+    },
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser",
+      "state" : {
+        "revision" : "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+        "version" : "1.8.2"
+      }
+    },
+    {
+      "identity" : "syscall-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/x13a/syscall-swift",
+      "state" : {
+        "revision" : "595fb1e127a60191835907a3ade0966044803c76",
+        "version" : "0.1.2"
+      }
+    }
+  ],
+  "version" : 3
 }
