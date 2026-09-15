@@ -21,7 +21,6 @@ on:
 jobs:
   build:
     runs-on: macos-latest
-
     steps:
     - uses: actions/checkout@v7
     - name: Build
