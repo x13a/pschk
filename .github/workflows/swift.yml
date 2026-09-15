@@ -3,16 +3,27 @@ name: Swift
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'Sources/**'
+      - 'Tests/**'
+      - 'Package.resolved'
+      - 'Package.swift'
+      - '.github/workflows/swift.yml'
   pull_request:
     branches: [ main ]
+    paths:
+      - 'Sources/**'
+      - 'Tests/**'
+      - 'Package.resolved'
+      - 'Package.swift'
+      - '.github/workflows/swift.yml'
 
 jobs:
   build:
-
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
     - name: Build
       run: swift build -v
     - name: Run tests
